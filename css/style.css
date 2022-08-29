@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+html {
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.container {
+    min-height: 100vh;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    background: url("../assets/bg_04.jpg")
+}
+
+.presentation {
+    padding: 0 3rem;
+}
+
+.presentation header {
+    margin-bottom: 3rem;
+}
+
+.presentation h1 {
+    display: block;
+    width: fit-content;
+    font-size: 3rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.presentation h1:nth-child(1) {
+    animation-delay: .8s;
+}
+
+.presentation h1:nth-child(2) {
+    animation-delay: 1.8s;
+}
+
+.presentation h1:nth-child(3) {
+    animation: text_reveal_name .5s ease forwards;
+    animation-delay: 2.8s;
+}
+
+.presentation h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+    background-color: #3d59bc;
+}
+
+.presentation h1:nth-child(1) span {
+    animation-delay: .5s;
+}
+
+.presentation h1:nth-child(2) span {
+    animation-delay: 1.5s;
+}
+
+.presentation h1:nth-child(3) span {
+    animation-delay: 2.5s;
+}
+
+.presentation p {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    gap: 2.2rem;
+}
+
+.btn {
+    margin-top: 1.7rem;
+    padding: 0.6rem 2.3rem;
+    background: transparent;
+    cursor: pointer;
+    border: 2px solid #FFF;
+    border-radius: 1rem;
+    transition: 1s transform
+}
+
+.btn a {
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #FFF;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    border: 2px solid #076265;
+}
+
+/* IMAGE */
+
+.image {
+    margin: 0 auto;
+}
+
+/* PESSOAL E PROFISSIONAL PAGE */
+
+.personal-list {
+    list-style-position: inside;
+    width: 100%;
+    max-width: 500px;
+    font-size: 1.2rem;
+}
+
+/* KEYFRAMES */
+
+@keyframes text_reveal {
+    100% {
+        color: white;
+    }
+}
+
+@keyframes text_reveal_name {
+    100% {
+        color: #3d59bc;
+        font-weight: bolder;
+    }
+}
+
+@keyframes text_reveal_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+
+    100% {
+        width: 0;
+        left: 100%
+    }
+}
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 1064px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        flex-direction: column;
+    }   
+}
